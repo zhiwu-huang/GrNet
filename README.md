@@ -11,7 +11,7 @@ Step1: Place the AFEW Grassmannian data under the folder "./data/afew/". The AFE
 
 Step2: Launch grnet_afew.m for a simple example.
 
-If you find any bug, please contact me via zhiwu.huang@vision.ee.ethz.ch
+Should you find any bugs, please contact me via zhiwu.huang@vision.ee.ethz.ch
 
 
 
