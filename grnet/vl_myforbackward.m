@@ -62,13 +62,14 @@ for i=1:n
       [res(i+1).x, res(i)] = vl_myreorth(res(i)) ;      
     case 'pooling'
       [res(i+1).x, res(i)] = v1_mypooling(res(i), l.pool) ;
-    case 'eigmap'
-      [res(i+1).x, res(i)] = vl_myeigmap(res(i), opts.p) ;   
+
+    case 'orthmap'
+      [res(i+1).x, res(i)] = vl_myorthmap(res(i), opts.p) ;   
     case 'projmap'
-      res(i+1).x = vl_myprojmap(res(i).x) ;
+      res(i+1).x = vl_myprojmap(res(i).x) ;  
+  
     case 'softmaxloss'
       res(i+1).x = vl_mysoftmaxloss(res(i).x, l.class) ; 
-
     case 'custom'
       res(i+1) = l.forward(l, res(i), res(i+1)) ;
     otherwise
@@ -100,10 +101,9 @@ if doder
     l = net.layers{i} ;
     res(i).backwardTime = tic ;
     switch l.type
-      case 'orthmap'
+      case 'frmap'
         [res(i).dzdx, res(i).dzdw] = ...
              vl_myfrmap(res(i).x, l.weight, res(i+1).dzdx) ;
-
       case 'fc'
         [res(i).dzdx, res(i).dzdw]  = ...
               vl_myfc(res(i).x, l.weight, res(i+1).dzdx) ; 
@@ -111,11 +111,12 @@ if doder
         res(i).dzdx = vl_myreorth(res(i), res(i+1).dzdx) ;
       case 'pooling'
         res(i).dzdx = v1_mypooling(res(i), l.pool, res(i+1).dzdx) ;
- 
-      case 'eigmap'
-        res(i).dzdx = vl_myeigmap(res(i), opts.p, res(i+1).dzdx) ; 
+     
+      case 'orthmap'
+        res(i).dzdx = vl_myorthmap(res(i), opts.p, res(i+1).dzdx) ; 
       case 'projmap'
         res(i).dzdx = vl_myprojmap(res(i).x, res(i+1).dzdx) ;
+      
       case 'softmaxloss'
         res(i).dzdx = vl_mysoftmaxloss(res(i).x, l.class, res(i+1).dzdx) ;
       case 'custom'

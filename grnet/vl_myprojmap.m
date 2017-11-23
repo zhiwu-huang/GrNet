@@ -1,4 +1,6 @@
 function Y = vl_myprojmap(X, dzdy)
+%projection mapping(ProjMap) layer
+
 [n1,n2,n3,n4] = size(X);
 
 Y = zeros(n1,n1,n3,n4);

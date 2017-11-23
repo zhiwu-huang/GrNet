@@ -1,6 +1,5 @@
 function [Y, Y_w] = vl_myfc(X, W, dzdy)
-%[Y, Y_w] = vl_myfc(X, W, dzdy)
-%Fully-connected layer
+%fully-connected convolutional (FC) layer
 
 [n1,n2,n3,n4] = size(X);
 

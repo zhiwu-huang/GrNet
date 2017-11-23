@@ -1,7 +1,5 @@
 function [Y, Y_w] = vl_myfrmap(X, W, dzdy)
-%[DZDX, DZDF, DZDB] = VL_MYFRMAP(X, F, B, DZDY)
-%FRMap Layer
-
+%full rank mapping (FRMap) layer
 
 [n1,n2,n3,n4] = size(X);
 [n7, n6, n5] = size(W);
@@ -30,13 +28,14 @@ else
 
                 Y_w(:,:,iw) = Y_w(:,:,iw)+d_t*X(:,:,ix)';
             else
-                Y(:,:,ix,iw) = W(:,:,iw)'*d_t;
+                Y(:,:,ix,iw) = W(:,:,iw)'*d_t; 
 
                 Y_w(:,:,iw) = Y_w(:,:,iw)+d_t*X(:,:,ix,iw)';
             end
         end
     end
     if n4 == 1
-        Y = Y/n5;
+        Y = Y/n5; 
     end
 end
+

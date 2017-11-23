@@ -1,18 +1,5 @@
 function Y = vl_mysoftmaxloss(X,c,dzdy)
-
-% classNum = size(c,2);
-% s = X;
-% s = bsxfun(@minus, s, max(s, [], 1));
-% s = exp(s);
-% s = s + 1e-8; %avoid NaN
-% y = s./repmat(sum(s,1),[classNum 1]);
-% if nargin < 3
-%     loss = -c'.* log(y);
-%     Y = sum(loss(:));
-% else
-%     % gradient computation    
-%     Y =dzdy* (-1) *(c'-y);%loss delta or output delta
-% end
+%softmax layer
 
 % class c = 0 skips a spatial location
 mass = single(c > 0) ;

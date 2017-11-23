@@ -1,4 +1,6 @@
 function [Y,R] = vl_myreorth(R, dzdy)
+%re-orthonormalization (ReOrth) layer
+
 X = R.x;
 
 [n1,n2,n3,n4] = size(X);
