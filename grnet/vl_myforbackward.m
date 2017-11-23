@@ -61,7 +61,7 @@ for i=1:n
     case 'reorth'
       [res(i+1).x, res(i)] = vl_myreorth(res(i)) ;      
     case 'pooling'
-      [res(i+1).x, res(i)] = v1_mypooling(res(i), l.pool) ;
+      [res(i+1).x, res(i)] = vl_mypooling(res(i), l.pool) ;
 
     case 'orthmap'
       [res(i+1).x, res(i)] = vl_myorthmap(res(i), opts.p) ;   
@@ -110,7 +110,7 @@ if doder
       case 'reorth'
         res(i).dzdx = vl_myreorth(res(i), res(i+1).dzdx) ;
       case 'pooling'
-        res(i).dzdx = v1_mypooling(res(i), l.pool, res(i+1).dzdx) ;
+        res(i).dzdx = vl_mypooling(res(i), l.pool, res(i+1).dzdx) ;
      
       case 'orthmap'
         res(i).dzdx = vl_myorthmap(res(i), opts.p, res(i+1).dzdx) ; 
