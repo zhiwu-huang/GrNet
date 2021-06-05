@@ -7,18 +7,15 @@ Note that the copyright of the manopt toolbox is reserved by https://www.manopt.
 
 ## Usage:
 
-Step1: Place the AFEW Grassmannian data under the folder "./data/afew/". The AFEW Grassmannian data can be downloaded from
-1. https://data.vision.ee.ethz.ch/zzhiwu/ManifoldNetData/GrData/AFEW_Gr_data.zip
-2. https://data.vision.ee.ethz.ch/zzhiwu/ManifoldNetData/GrData/HDM05_GrData.zip
-3. https://data.vision.ee.ethz.ch/zzhiwu/ManifoldNetData/GrData/PaSC_GrData.zip
-
+Step1: Place the <a href="https://data.vision.ee.ethz.ch/zzhiwu/ManifoldNetData/GrData/AFEW_Gr_data.zip"> AFEW </a> Grassmannian data under the folder "./data/afew/". Note that the <a href="https://data.vision.ee.ethz.ch/zzhiwu/ManifoldNetData/GrData/HDM05_GrData.zip"> HDM05</a>, <a href="https://data.vision.ee.ethz.ch/zzhiwu/ManifoldNetData/GrData/PaSC_GrData.zip">PaSC </a> Grassmannian data are also publicly available.
 
 Step2: Launch grnet_afew.m for a simple example.
 
-Should you find any bugs, please contact me via zhiwu.huang@vision.ee.ethz.ch
+## Related Work/Implementation:
 
+1. Thanks to Oleg Smirnov who is Sr. Applied Scientist at Amazon, a <a href="https://github.com/master/tensorflow-manopt"> TensorFlow ManOpt </a> library is released to reproduce our GrNet.
 
-## How to Cite <a name="How-to-Cite"></a>
+## How to Cite: <a name="How-to-Cite"></a>
 If you find this project helpful, please consider citing us as follows:
 ```bash
 @inproceedings{huang2018grnet,
